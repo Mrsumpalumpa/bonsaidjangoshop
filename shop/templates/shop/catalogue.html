@@ -1,0 +1,40 @@
+{%extends "shop/layout.html"%}
+{% load static %}
+{% block content_top %}
+<div class="container">
+    <div class="row ">
+        
+            <form  class ="col-md-10 mx-auto mt-3" action="/catalogue/search/" method="GET" class="form">
+                <div class="form-group d-flex"> 
+                    <input class="form-control mx-auto" type="searchprod" name="prd" placeholder="Search" aria-label="Search">
+                    <button class="btn btncustom ml-3 " type="submit">Search</button>
+                </div>
+            </form>            
+        
+    </div>
+</div>
+<div class="container d-flex justify-content-center">
+    
+    <div class="row mb-5">
+        {% for product in lista%}
+        <div class="col-md-6 mx-auto mb-2 d-flex justify-content-center">
+            <div class="card card1 mt-5  " style="min-width: 320px;">
+                <h5 class="card-title text-body text-center p-3 ">{{product.productname}}</h5>
+                <div class="card-body bg-light text-body ">                    
+                    {%if product.productimg%}
+                        <img src="{{product.productimg.url}}" class="card-img-top imgcardcatalogue mb-3"  alt="...">
+                    {% else %}
+                        <img src="{% static 'shop/img/logobons.svg' %}" class="card-img-top p-3" alt="...">
+                    {%endif%}                
+                    <p class="card-text">{{product.productsection}}</p>
+                    <p class="card-text">{{product.productprice}}€</p>                    
+                    <a href="#" class="btn  btn-block btncustom ">Add to cart <i class="fa fa-cart-plus"></i></a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+
+        
+    </div>
+</div>
+{% endblock%}

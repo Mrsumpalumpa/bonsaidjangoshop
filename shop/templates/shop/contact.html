@@ -1,0 +1,47 @@
+{% extends 'shop/layout.html'%}
+{% block content_top%}
+
+    <div class="row mt-5">
+        <div class="col-md-8 text-center mx-auto">
+            <h1>Contact</h1>
+            <p>Find us!</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d444.5960575775152!2d2.2272459523345964!3d41.44195885453354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1614821000940!5m2!1ses!2ses"  allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h1 class="text-center">Fill up our form</h1>
+        </div>        
+    </div>
+    <div class="row d-flex justify-content-center mt-5 ">
+        <div class="col-md-8 mb-5 ">
+            
+            <form action="/contact/" method="POST">{% csrf_token %} 
+                <div class="form-group p-3">
+                    <label for="name">User name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" name ="username" required>
+                </div>
+                <div class="form-group p-3">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
+                </div>
+                <div class="form-group p-3">
+                    <label for="Textarea1">Issues</label>
+                    <textarea class="form-control" id="Textarea1" rows="5" name ="issue" placeholder="Write down your issues..." required></textarea>
+                </div>
+                <div class="form-group p-3">
+                    <button type="submit" class="btn btn-block btncustom" >Send message  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>                              
+            </form>
+        
+        <!--<form action="" method="POST">
+                {% csrf_token %}
+                
+            </form>
+            
+            <button type="submit"></button>--> 
+        </div>
+       
+    </div>
+{% endblock content_top %}

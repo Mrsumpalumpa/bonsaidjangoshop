@@ -1,0 +1,24 @@
+{%extends "shop/layout.html"%}
+{% block content_top %}
+{% load crispy_forms_tags %}   
+    <div class="row">
+        <div class="col-md-12 text-center mt-4">
+            <h1>Log In</h1>
+            <p>or <a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 mx-auto my-5">
+            <form action="" method="POST">{% csrf_token %}
+                <fieldset class="form-group p-3 bg-light border rounded text-dark">
+                    
+                    {{form | crispy }}
+                    
+                    <button type="submit" value="Log in" class="btn btn-block btncustom "> Log In </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content_top%}

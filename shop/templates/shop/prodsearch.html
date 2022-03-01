@@ -1,0 +1,54 @@
+{% extends "shop/layout.html"%}
+{% load static  %}
+{% block content_top%}
+    <div class="container ">
+        {% if message%}
+        <div class="row mt-5">
+            <div class="col-12">
+                <h1 class="text-center">{{message}}</h1>
+            </div>
+        </div>
+        {%endif%}
+        {% if articles %}
+            <div class="row mt-5">
+                <div class="col-md-12">                                
+                    <h1 class="text-center">Found products: {{articles|length}} articles</h1>
+                </div>
+            </div>
+            <div class="container ">
+                <div class="row">   
+                    <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap mb-5">
+                        {% for art in articles %}
+
+                        <div class="card card1 mt-5" style="width: 18rem;">
+                            <h5 class="card-title text-center p-3">{{art.productname}}</h5>
+                            <div class="card-body bg-light">                    
+                                {%if art.productimg %}
+                                    <img src="{{art.productimg.url}}" class="card-img-top mb-3 imgcardcatalogue" alt="...">
+                                {% else %}
+                                    <img src="{% static 'shop/img/logobons.svg' %}" class="card-img-top p-3" alt="...">
+                                {%endif%}                
+                                <p class="card-text">{{art.productsection}}</p>
+                                <p class="card-text">{{art.productprice}}€</p>
+                                <a href="#" class="btn btncustom ">Add to cart <i class="fa fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                                
+                        {% endfor %}            
+                    </div>            
+                </div> 
+            </div>
+     
+        {% else %}
+            <div class="row ">
+                <div class="col-12 mt-5 ">
+                    <h1 class ="text-center">Article not found: {{query}}</h1>
+                    <h1 class ="text-center"><a href="/catalogue">Back to catalogue</a></h1>  
+                </div>
+            </div>
+            
+        {%endif%}     
+        
+    </div>
+    
+{% endblock%}

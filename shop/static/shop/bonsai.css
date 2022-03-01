@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanalei&display=swap");
+
+@font-face {
+  src: url('./fonts/MavenPro-Black.ttf');
+  font-family: "Maven Pro";
+}
+:root{
+  --cardfont:"Roboto",sans-serif;
+  --cardcolor: rgba(226, 228, 213, 0.459);
+  --btncolor:rgba(168, 159, 159, 0.63);
+  --btncolorhover:rgba(64, 65, 61, 0.644);
+  --navitemhover: rgba(226, 228, 213, 0.397);
+}
+form fieldset{
+  opacity: 95%;
+}
+form input{
+  background-color: aliceblue;
+}
+body {
+  font-family: var(--cardfont);
+  font-weight: bolder;
+}
+body .container-top {
+  height: auto;
+  min-height: 100vh;
+  background-image: url('../shop/img/Spectrum-Gradient.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
+}
+.imgtop{
+  position:absolute;
+  max-width: 35vw;
+  right:0;
+  top:15%;
+  z-index:0;
+}
+body .navbar{
+  font-family: "Roboto",sans-serif;
+  color:black;
+  z-index: 1;
+}
+.navbar-toggler{
+  background-color: var(--btncolor);
+}
+.navbar-toggler:hover{
+  background-color: var(--cardcolor);
+  box-shadow: rgb(255, 255, 255) 1px 2px 5px;
+  transition: all 0.2s ease;
+}
+.navbar-toggler:active{
+  background-color:var(--btncolorhover);
+}
+iframe{
+  border-radius: 15px;
+}
+body .container-top .logo-cont {
+  padding: 0;
+  font-family: "Roboto";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color:black;
+}
+body .container-top nav{
+  font-size: 1.3em;
+  color:black;
+}
+.btncustom{
+  background-color: var(--btncolor);
+  border-color: var(--btncolor);
+}
+.btncustom:hover{
+  background-color: var(--cardcolor);
+  box-shadow: rgb(255, 255, 255) 1px 2px 5px;
+  transition: all 0.2s ease;
+}
+.nav-item{
+  min-width: 15%;
+}
+.nav-link{
+  padding:.4em;
+  border-radius: 3px;
+}
+.nav-link:hover {  
+  box-shadow: rgb(255, 255, 255) 1px 1px 3px;
+}
+/*Cards */
+.card1 {
+  background-color: var(--cardcolor);
+  color: rgb(32, 29, 29);
+  min-height: 190px;
+}
+.card1:hover {  
+  box-shadow: rgb(255, 255, 255) 3px 3px 5px;
+  transition: box-shadow 0.5s ease;
+}
+.imgcardcatalogue{
+  max-height: 250px;
+  border: solid 1.5px var(--cardcolor);
+  border-radius:5px;
+}
+.card  h5{
+  font-weight: 800;
+}
+/*Maincont*/
+body .container-bottom {
+  background-color: whitesmoke;
+  padding: 0;
+  height: auto;
+  min-height: 20vh;
+}
+.slider-main {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+}
+.carousel-cell {
+  width: 66%;
+  min-height: 100%;
+  margin-right: 10px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+}
+.slider-main img {
+  width: 98%;
+  max-height: 88%;
+  border-radius: 5px;
+}
+.slider-main img:hover{
+  box-shadow: rgba(96, 99, 90, 0.452) 3px 3px 5px;
+  transition: box-shadow 0.3s ease;
+}
+.foot{
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=bonsai.css.map */

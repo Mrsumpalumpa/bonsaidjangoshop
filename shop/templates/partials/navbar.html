@@ -1,0 +1,57 @@
+{% load static %}
+    <div class="container pt-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 ">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <img src="{% static 'shop/img/bonsai.svg' %}"  width="60" height="60" class="d-inline-block align-top iconnav" alt="" loading="lazy">
+                {% if user.is_authenticated%}
+                    <span  style="font-size: smaller;" class="text-light ">&nbsp;{{user.username}} <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                {% else %}
+                    <span class="text-light">&nbsp;Bonsai&reg;</span>
+                {% endif %}
+
+            </a>
+            <button class="navbar-toggler" type="button btncustom" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "></span>
+            </button>
+
+            <div class="collapse navbar-collapse p-0" id="navbarNavAltMarkup">
+              
+                <ul class="navbar-nav w-100 justify-content-end">
+                    <li class="nav-item p-3 text-center">
+                        <a class="nav-link text-light nav-fill" href="{% url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item p-3 text-center">
+                        <a class="nav-link text-light nav-fill" href="{% url 'catalogue' %}">Catalogue </a>
+                    </li>
+                    <li class="nav-item p-3 text-center">
+                        <a class="nav-link text-light nav-fill"  href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    {% if user.is_authenticated%}
+                        
+                        <li class="nav-item p-3 text-center">
+                            <a class="nav-link text-light nav-fill" href="{% url 'logout' %}">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        
+                    {% else %}
+                        <li class="nav-item p-3 text-center">
+                            <a class="nav-link text-light nav-fill" href="{% url 'login' %}">Log In  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item p-3  text-center">
+                            <a class="nav-link text-light nav-fill" href="{% url 'signup' %}">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+                
+              </div>
+            
+        </nav>
+          
+           
+        
+    </div>
+
+          
